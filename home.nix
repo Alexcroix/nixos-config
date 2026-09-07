@@ -5,15 +5,6 @@
   home.homeDirectory = "/home/alexcroix";
   home.stateVersion = "25.05";
 
-  programs.bash = {
-    enable = true;
-    profileExtra = ''
-      if uwsm check may-start; then
-        exec uwsm start hyprland-uwsm.desktop
-      fi
-    '';
-  };
-
   programs.git = {
     enable = true;
     userName = "Alexandre Lacroix";
