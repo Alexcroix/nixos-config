@@ -74,6 +74,9 @@
     foot
     waybar
     kitty
+    pcmanfm
+    wofi
+    hyprshot
   ];
 
   services.openssh.enable = true;
