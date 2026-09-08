@@ -1,86 +1,36 @@
-{config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./modules/sddm.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./modules/networking.nix
+    ./modules/nvidia.nix
+    ./modules/sddm.nix
+    ./modules/fonts.nix
+    ./modules/hyprland.nix
+    ./modules/users.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
-
   time.timeZone = "Europe/Paris";
-
   zramSwap.enable = true;
 
-
-  # --- NVIDIA (RTX 5050 Max-Q + Intel UHD hybride) ---
   nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  hardware.nvidia = {
-    open = true;                     # (RTX 50xx)
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-    prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:2:0:0";
-    };
-  };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "nvidia";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    NVD_BACKEND = "direct";
-  };
-  # --- END NVIDIA ---
-
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
-  }; 
-
-  users.users.alexcroix = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-    packages = with pkgs; [
-      tree
-      helix
-    ];
-  };
-
-  programs.firefox.enable = true;
   environment.systemPackages = with pkgs; [
     vim
     wget
     foot
-    waybar
     kitty
+    waybar
     pcmanfm
-    wofi
     hyprshot
   ];
 
-  services.openssh.enable = true;
+  programs.firefox.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.05";
 }
