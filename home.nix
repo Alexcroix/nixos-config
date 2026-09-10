@@ -11,6 +11,7 @@
     ./home/hyprlock.nix
     ./home/hypridle.nix
     ./home/wofi.nix
+    ./home/swayosd.nix
   ];
 
   programs.bash.enable = true;

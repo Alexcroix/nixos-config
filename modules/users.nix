@@ -3,7 +3,7 @@
 {
   users.users.alexcroix = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "video"];
     packages = with pkgs; [
       tree
       helix
