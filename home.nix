@@ -10,6 +10,7 @@
     ./home/waybar.nix
     ./home/hyprlock.nix
     ./home/hypridle.nix
+    ./home/wofi.nix
   ];
 
   programs.bash.enable = true;
