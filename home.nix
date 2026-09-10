@@ -8,6 +8,8 @@
     ./home/hyprland.nix
     ./home/foot.nix
     ./home/waybar.nix
+    ./home/hyprlock.nix
+    ./home/hypridle.nix
   ];
 
   programs.bash.enable = true;
