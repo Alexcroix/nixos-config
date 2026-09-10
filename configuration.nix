@@ -25,9 +25,10 @@
     wget
     foot
     kitty
-    waybar
     pcmanfm
     hyprshot
+    wofi
+    pavucontrol
   ];
 
   programs.firefox.enable = true;

@@ -7,6 +7,7 @@
     ./home/starship.nix
     ./home/hyprland.nix
     ./home/foot.nix
+    ./home/waybar.nix
   ];
 
   programs.bash.enable = true;
