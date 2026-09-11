@@ -12,6 +12,7 @@
     ./home/hypridle.nix
     ./home/wofi.nix
     ./home/swayosd.nix
+    ./home/wlogout.nix
   ];
 
   programs.bash.enable = true;

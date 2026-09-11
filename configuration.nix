@@ -29,6 +29,7 @@
     hyprshot
     wofi
     pavucontrol
+    wlogout
   ];
 
   programs.firefox.enable = true;
