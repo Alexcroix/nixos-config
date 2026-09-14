@@ -7,6 +7,7 @@
     packages = with pkgs; [
       tree
       helix
+      gcc
     ];
   };
 }

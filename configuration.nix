@@ -11,8 +11,11 @@
     ./modules/users.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {  
+    systemd-boot.enable = true;
+    systemd-boot.configurationLimit = 3;
+    efi.canTouchEfiVariables = true;
+  };
 
   time.timeZone = "Europe/Paris";
   zramSwap.enable = true;
@@ -30,6 +33,8 @@
     wofi
     pavucontrol
     wlogout
+    hyprpaper
+    wdisplays
   ];
 
   programs.firefox.enable = true;

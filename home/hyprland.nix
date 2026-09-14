@@ -6,6 +6,7 @@ in
 {
   home.file.".config/hypr/hyprland.conf".source = ../config/hypr/hyprland.conf;
   home.file.".config/hypr/hyprpaper.conf".source = ../config/hypr/hyprpaper.conf;
+  home.file.".config/hypr/wp_background.jpg".source = ../assets/wp_background.jpg;
 
   home.file.".config/hypr/theme/catppuccin-mocha.conf".text = ''
     $rosewater = rgb(${p.rosewater})
