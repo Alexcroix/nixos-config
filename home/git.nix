@@ -6,10 +6,11 @@
     settings = {
       user = {
         name = "Alexandre Lacroix";
-        email = "alexlacroix03@gmail.com";
+        email = "alexandre.lacroix@epita.fr";
       };
       init.defaultBranch = "main";
       pull.rebase = false;
+      core.editor = "hx";
     };
   };
 }
