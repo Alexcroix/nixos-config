@@ -13,6 +13,8 @@
     ./home/wofi.nix
     ./home/swayosd.nix
     ./home/wlogout.nix
+    ./home/helix.nix
+    ./home/ada.nix
   ];
 
   programs.bash.enable = true;

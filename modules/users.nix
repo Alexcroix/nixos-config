@@ -6,7 +6,6 @@
     extraGroups = [ "wheel" "networkmanager" "video" "docker"];
     packages = with pkgs; [
       tree
-      helix
       gcc
     ];
   };
