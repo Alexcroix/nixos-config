@@ -8,6 +8,12 @@
       tree
       helix
       gcc
+      gnumake
+      clang-tools
+
+      #Ada tools
+      gprbuild
+      gnat
     ];
   };
 }
