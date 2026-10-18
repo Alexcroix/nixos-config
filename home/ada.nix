@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     gnat
-    gprbuild
-    gnatprove
+    gnatPackages.gprbuild
+    gnatPackages.gnatprove
   ];
 }

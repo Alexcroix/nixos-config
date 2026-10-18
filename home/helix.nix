@@ -1,4 +1,9 @@
-{ config, pkgs, nix-ada, ... }:
+{
+  config,
+  pkgs,
+  nix-ada,
+  ...
+}:
 
 {
   programs.helix = {
@@ -7,9 +12,10 @@
 
     # Serveurs de langage et formateurs, disponibles uniquement pour helix
     extraPackages = with pkgs; [
-      clang-tools   # clangd (C/C++) + clang-format
-      nil           # LSP Nix
-      nixfmt        # formateur Nix
+      clang-tools # clangd (C/C++) + clang-format
+      nil # LSP Nix
+      nixfmt # formateur Nix
+      gnatPackages.gnat.cc
       nix-ada.packages.${pkgs.stdenv.hostPlatform.system}.ada-language-server
     ];
 
